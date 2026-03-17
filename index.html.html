@@ -478,16 +478,17 @@
 
         try {
           fetch("/api/lead", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-              name: name,
-              phone: phone,
-              page: window.location.href
-            })
-          });
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  keepalive: true,
+  body: JSON.stringify({
+    name: name,
+    phone: phone,
+    page: window.location.href
+  })
+});
 
 form.reset();
 window.location.href = "https://yangichirchiq.tilda.ws/thankyou";
