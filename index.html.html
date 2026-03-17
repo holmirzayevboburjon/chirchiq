@@ -477,7 +477,7 @@
         }
 
         try {
-          const response = await fetch("/api/lead", {
+          fetch("/api/lead", {
             method: "POST",
             headers: {
               "Content-Type": "application/json"
@@ -489,26 +489,8 @@
             })
           });
 
-          const result = await response.json();
-
-          if (result.ok) {
-            if (successBox) {
-              successBox.style.display = "block";
-              successBox.innerHTML = "Ma’lumot muvaffaqiyatli yuborildi.";
-            }
-
-            form.reset();
-            window.location.href = "https://yangichirchiq.tilda.ws/thankyou";
-          } else {
-            showError(result.message || "Xatolik yuz berdi.");
-          }
-        } catch (error) {
-          showError("Server bilan ulanishda xatolik yuz berdi.");
-        } finally {
-          if (submitBtn) {
-            submitBtn.disabled = false;
-            submitBtn.style.opacity = "1";
-          }
+form.reset();
+window.location.href = "https://yangichirchiq.tilda.ws/thankyou";
         }
       });
     });
