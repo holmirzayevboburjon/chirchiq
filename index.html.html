@@ -475,9 +475,7 @@
           submitBtn.disabled = true;
           submitBtn.style.opacity = "0.7";
         }
-
-        try {
-          fetch("/api/lead", {
+fetch("/api/lead", {
   method: "POST",
   headers: {
     "Content-Type": "application/json"
@@ -491,7 +489,8 @@
 });
 
 form.reset();
-window.location.href = "https://yangichirchiq.tilda.ws/thankyou";
+window.location.replace("https://yangichirchiq.tilda.ws/thankyou");
+return;
         }
       });
     });
