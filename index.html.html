@@ -485,7 +485,7 @@
             body: JSON.stringify({
               name: name,
               phone: phone,
-              page: window.location.href = "https://yangichirchiq.tilda.ws/thankyou";
+              page: window.location.href
             })
           });
 
@@ -498,10 +498,7 @@
             }
 
             form.reset();
-
-            setTimeout(function () {
-              window.location.href = "/";
-            }, 1200);
+            window.location.href = "https://yangichirchiq.tilda.ws/thankyou";
           } else {
             showError(result.message || "Xatolik yuz berdi.");
           }
